@@ -8,10 +8,7 @@
       <ul class="navbar-nav me-3 mb-2 mb-lg-0 justify-content-end flex-grow-1">
         <% if user_signed_in? %>
             <li class="nav-item">
-                Hi
-            </li>
-            <li class="nav-item">
-                <%= link_to @current_user.first_name, edit_user_registration_path, class: "nav-link #{set_active_class('/users/edit')}" %>
+                <%= link_to "Hi #{current_user.first_name}!", edit_user_registration_path, class: "nav-link #{set_active_class('/users/edit')}" %>
             </li>
             <li class="nav-item">
                 <%= link_to 'Your activities', activities_path, class: "nav-link #{set_active_class('/activities')}" %>
@@ -19,6 +16,9 @@
             <li class="nav-item py-2"> | </li>
             <li class="nav-item">
                 <%= link_to 'Add activity', new_activity_path, class: "nav-link #{set_active_class('/activities/new')}" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Sign out', destroy_user_session_path, class: "nav-link", data: {"turbo-method": :delete} %>
             </li>
         <% else %>
             <li class="nav-item">
