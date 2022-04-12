@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users/:id' => 'users#show'
   devise_scope :user do
     # Redirects users back to homepage when deleting account
     get "users", to: "site#home"
