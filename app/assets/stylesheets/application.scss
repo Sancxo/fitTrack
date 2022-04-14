@@ -17,9 +17,34 @@
     background-color: chartreuse;
 }
 
-.text-orange {
+// faire des media queries pour la height du jumbotron
+.hero-jumbotron {
+    min-height: 500px;
+    background: 50% 66% / cover no-repeat url("hero_img.webp");
+}
+
+// Texts
+.text-orange, .nav-link:hover {
     color: orangered !important;
+}
+.text-green {
+    color: chartreuse;
 }
 a.text-orange:hover {
     color: orange !important;
+}
+
+// Buttons
+.btn-orange {
+    color: #000;
+    background-color: orange;
+    border-color: orange;
+}
+.btn-green {
+    color: #000;
+    background-color: chartreuse;
+    border-color: chartreuse;
+}
+.btn-orange:hover, .btn-green:hover {
+    filter: brightness(1.125) saturate(1.5);
 }

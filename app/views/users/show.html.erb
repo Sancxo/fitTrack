@@ -4,6 +4,6 @@
     <p><%= @user.about %></p>
     <p>Member since: <%= @user.created_at.year %>/<%= format('%02i', @user.created_at.month) %>/<%= format('%02i', @user.created_at.day) %></p>
     <% if @user.id == current_user.id %>
-      <button>Edit</button>
+        <%= link_to "Edit", edit_user_registration_path, class: "btn btn-orange" %>
     <% end %>
 </div>
