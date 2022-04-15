@@ -1,6 +1,8 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  
   # GET /activities or /activities.json
   def index
     @activities = Activity.all
@@ -12,7 +14,8 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
-    @activity = Activity.new
+    # @activity = Activity.new
+    @activity = current_user.activities.build
   end
 
   # GET /activities/1/edit
@@ -21,7 +24,8 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
-    @activity = Activity.new(activity_params)
+    # @activity = Activity.new(activity_params)
+    @activity = current_user.activities.build(activity_params)
 
     respond_to do |format|
       if @activity.save
@@ -63,8 +67,13 @@ class ActivitiesController < ApplicationController
       @activity = Activity.find(params[:id])
     end
 
+    def correct_user
+      @activity = current_user.activities.find_by(id: params[:id])
+      redirect_to activities_path, notice: "Not authorized to edit or delete this activity" if @activity.nil?
+    end
+
     # Only allow a list of trusted parameters through.
     def activity_params
-      params.require(:activity).permit(:name, :date, :time, :duration)
+      params.require(:activity).permit(:name, :date, :time, :duration, :user_id)
     end
 end

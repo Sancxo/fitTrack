@@ -10,7 +10,7 @@
     <% end%>
 
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <p><%= get_user_age() %> / <%= @user.gender %></p>
+    <p><%= get_user_age() unless @user.birthdate.nil? %> / <%= @user.gender unless @user.gender.nil? %></p>
     <p><%= @user.about %></p>
     <p>Member since: <%= @user.created_at.year %>/<%= format('%02i', @user.created_at.month) %>/<%= format('%02i', @user.created_at.day) %></p>
     <% if user_signed_in? && @user.id == current_user.id %>

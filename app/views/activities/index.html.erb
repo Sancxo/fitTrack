@@ -4,7 +4,9 @@
 
 <div id="activities">
   <% @activities.each do |activity| %>
+    <%# if activity.user_id == current_user.id %>
     <%= render activity %>
+    <%# end %>
     <p>
       <%= link_to "Show this activity", activity %>
     </p>
