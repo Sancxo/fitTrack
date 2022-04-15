@@ -19,10 +19,19 @@
 
 // faire des media queries pour la height du jumbotron
 .hero-jumbotron {
-    min-height: 500px;
     background: 50% 66% / cover no-repeat url("hero_img.webp");
 }
 
+@media (min-width: 768px) {
+    .hero-jumbotron {
+        height: 300px;
+    }
+}
+@media (min-width: 1200px) {
+    .hero-jumbotron {
+        height: 500px;
+    }  
+}
 // Texts
 .text-orange, .nav-link:hover {
     color: orangered !important;
@@ -32,6 +41,9 @@
 }
 a.text-orange:hover {
     color: orange !important;
+}
+.text-border-dark {
+    text-shadow: #000 1px 0, #000 0 1px, #000 -1px 0, #000 0 -1px;
 }
 
 // Buttons

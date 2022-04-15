@@ -1,9 +1,15 @@
 <div class="text-center my-3">
+    <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar %>
+    <% else %>
+        <%= image_tag 'avatar_man.png', width: "300px", class: "rounded-circle" %>
+    <% end%>
+
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p>Age: <%= get_user_age() %></p>
     <p><%= @user.about %></p>
     <p>Member since: <%= @user.created_at.year %>/<%= format('%02i', @user.created_at.month) %>/<%= format('%02i', @user.created_at.day) %></p>
-    <% if @user.id == current_user.id %>
+    <% if user_signed_in? && @user.id == current_user.id %>
         <%= link_to "Edit", edit_user_registration_path, class: "btn btn-orange" %>
     <% end %>
 </div>

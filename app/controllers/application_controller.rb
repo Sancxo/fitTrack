@@ -7,7 +7,12 @@ class ApplicationController < ActionController::Base
 
     def config_permitted_params
         devise_parameter_sanitizer.permit(:sign_up) do |user|
-            user.permit(:first_name, :last_name, :birthdate, :about, :email, :password, :password_confirmation )
+            user.permit(:first_name, :last_name, :avatar, :birthdate, :about, :email, :password, :password_confirmation)
         end
+    end
+
+    #Login Path (if already logged in)
+    def after_sign_in_path_for(resource)
+        user_profile_path(current_user.id)
     end
 end
