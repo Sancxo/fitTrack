@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
 CREATE TABLE sqlite_sequence(name,seq);
-CREATE TABLE IF NOT EXISTS "activities" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" date DEFAULT NULL, "duration" time DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "time" time DEFAULT NULL);
-CREATE TABLE IF NOT EXISTS "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_name" varchar, "last_name" varchar, "birthdate" date, "about" text, "avatar" attachment);
+CREATE TABLE IF NOT EXISTS "activities" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" date DEFAULT NULL, "duration" time DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "time" time DEFAULT NULL, "user_id" integer);
+CREATE TABLE IF NOT EXISTS "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_name" varchar, "last_name" varchar, "birthdate" date, "about" text, "avatar" attachment, "gender" varchar);
 CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
 CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token");
 CREATE TABLE IF NOT EXISTS "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL);
@@ -18,6 +18,7 @@ FOREIGN KEY ("blob_id")
   REFERENCES "active_storage_blobs" ("id")
 );
 CREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest");
+CREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20220408125719'),
 ('20220408144439'),
@@ -25,6 +26,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220408182319'),
 ('20220408182508'),
 ('20220415075503'),
-('20220415080520');
+('20220415080520'),
+('20220415132547'),
+('20220415133158');
 
 

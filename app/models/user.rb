@@ -8,5 +8,7 @@ class User < ApplicationRecord
     a.variant :profile, resize_to_limit: [300, 300]
   end
 
+  has_many :activities
+
   validates :avatar, content_type: ['image/png', 'image/jpeg', 'imafe/gif', 'image/webp', 'image/avif']
 end

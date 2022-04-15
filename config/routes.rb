@@ -4,7 +4,13 @@ Rails.application.routes.draw do
     # Redirects users back to homepage when deleting account
     get "users", to: "site#home"
   end
-  devise_for :users
+  devise_for :users, controllers: {
+    confirmations: "users/confirmations",
+    passwords: "users/passwords",
+    registrations: "users/registrations",
+    sessions: "users/sessions",
+    unlocks: "users/unlocks",
+  }
   root "site#home"
   get '/about' => "site#about"
 

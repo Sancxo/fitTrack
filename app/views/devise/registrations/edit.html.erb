@@ -8,6 +8,11 @@
     <%= f.file_field :avatar %>
   </div>
 
+    <div>
+      <%= f.label :gender %>
+      <%= f.select :gender, ["Female", "Male"] %>
+    </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
