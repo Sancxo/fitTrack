@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Your activities</h1>
 
 <div id="activities">
   <% @activities.each do |activity| %>
-    <% if activity.user_id == current_user.id %>
+    <% if user_signed_in? && activity.user_id == current_user.id %>
       <%= render activity %>
       <p>
         <%= link_to "Show this activity", activity %>

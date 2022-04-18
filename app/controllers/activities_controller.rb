@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
   
   # GET /activities or /activities.json
@@ -69,7 +69,7 @@ class ActivitiesController < ApplicationController
 
     def correct_user
       @activity = current_user.activities.find_by(id: params[:id])
-      redirect_to activities_path, notice: "Not authorized to edit or delete this activity" if @activity.nil?
+      redirect_to activities_path, alert: "Not authorized to edit or delete this activity" if @activity.nil?
     end
 
     # Only allow a list of trusted parameters through.

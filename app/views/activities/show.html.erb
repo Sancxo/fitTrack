@@ -1,8 +1,8 @@
 <%= render @activity %>
 
 <div>
-  <% if @activity.user_id == current_user.id %><%= link_to "Edit this activity", edit_activity_path(@activity) %> |<% end %>
+  <% if user_signed_in? && @activity.user_id == current_user.id %><%= link_to "Edit this activity", edit_activity_path(@activity) %> |<% end %>
   <%= link_to "Back to activities", activities_path %>
 
-  <%= button_to "Destroy this activity", @activity, method: :delete if @activity.user_id == current_user.id %>
+  <%= button_to "Destroy this activity", @activity, method: :delete if user_signed_in? && @activity.user_id == current_user.id %>
 </div>
