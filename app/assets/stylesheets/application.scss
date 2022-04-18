@@ -12,6 +12,7 @@
  *
  */
 @import "bootstrap";
+@import "font-awesome";
 
 .bg-lime {
     background-color: chartreuse;
@@ -65,4 +66,21 @@ a.text-orange:hover {
 // Borders
 .border-orange {
     border-color: orange !important;
+}
+
+// Activity cards
+.card-img {
+    height: 10rem;
+}
+.running {
+    background: center / cover no-repeat url("running.jpg");
+}
+.cycling {
+    background: center / cover no-repeat url("cycling.jpg");
+}
+.hiking {
+    background: center / cover no-repeat url("hiking.webp");
+}
+.lifting {
+    background: center / cover no-repeat url("lifting.jpg");
 }

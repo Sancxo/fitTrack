@@ -1,7 +1,7 @@
 <div class="text-center">
   <h1>Your activities</h1>
 
-  <div id="activities" class="container p-3 d-flex flex-wrap">
+  <div id="activities" class="container p-3 d-flex flex-wrap justify-content-center">
     <% @activities.each do |activity| %>
       <% if activity.user_id == current_user.id %>
         <%= render partial: "activity_card", locals: {activity: activity} %>

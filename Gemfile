@@ -53,6 +53,8 @@ gem 'active_storage_validations'
 
 # Bootstrap 5
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+# Font Awesome
+gem 'font-awesome-sass', '~> 6.1', '>= 6.1.1'
 
 # Devise (auth)
 gem 'devise'
