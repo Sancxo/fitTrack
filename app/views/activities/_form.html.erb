@@ -17,7 +17,18 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.select :name, [
+      "Running", 
+      "Swimming", 
+      "Walking", 
+      "Cycling", 
+      "Skiing", 
+      "Weight-lifting", 
+      "Rowing", 
+      "Skating",
+      "Yoga",
+      "Climbing"
+    ] %>
   </div>
 
   <div>
