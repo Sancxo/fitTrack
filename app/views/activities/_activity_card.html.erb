@@ -1,0 +1,9 @@
+<div id="<%= dom_id activity %>" class="card m-2" style="width: 16rem; height: 16rem">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= activity.name %></h5>
+    <p class="card-text m-3"><%= activity.date %> at <%= activity.time.strftime('%H:%M:%S') %></p>
+    <p class="card-text">Duration: <%= activity.duration.strftime('%H:%M:%S') %></p>
+    <%= link_to "Show this activity", activity, class: "btn btn-orange mt-3" %>
+  </div>
+</div>

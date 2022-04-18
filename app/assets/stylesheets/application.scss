@@ -32,6 +32,7 @@
         height: 500px;
     }  
 }
+
 // Texts
 .text-orange, .nav-link:hover {
     color: orangered !important;
@@ -59,4 +60,9 @@ a.text-orange:hover {
 }
 .btn-orange:hover, .btn-green:hover {
     filter: brightness(1.125) saturate(1.5);
+}
+
+// Borders
+.border-orange {
+    border-color: orange !important;
 }

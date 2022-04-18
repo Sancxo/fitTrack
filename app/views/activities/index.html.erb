@@ -1,14 +1,13 @@
-<h1>Your activities</h1>
+<div class="text-center">
+  <h1>Your activities</h1>
 
-<div id="activities">
-  <% @activities.each do |activity| %>
-    <% if user_signed_in? && activity.user_id == current_user.id %>
-      <%= render activity %>
-      <p>
-        <%= link_to "Show this activity", activity %>
-      </p>
+  <div id="activities" class="container p-3 d-flex flex-wrap">
+    <% @activities.each do |activity| %>
+      <% if activity.user_id == current_user.id %>
+        <%= render partial: "activity_card", locals: {activity: activity} %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<%= link_to "New activity", new_activity_path %>
+  <%= link_to "New activity", new_activity_path, class: "btn btn-green" %>
+</div>
