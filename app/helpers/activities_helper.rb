@@ -11,21 +11,23 @@ module ActivitiesHelper
         when "Cycling"
             'cycling'
         when "Swimming"
-
+            'swimming'
         when "Walking"
             'hiking'
         when "Skiing"
-
+            'skiing'
         when "Weight-lifting"
             'lifting'
         when "Yoga"
-
+            'yoga'
         when "Rowing"
-
+            'rowing'
         when "Skating"
-
+            'skating'
         when "Climbing"
-
+            'climbing'
+        when 'Tennis'
+            'tennis'
         else
             nil
         end 
