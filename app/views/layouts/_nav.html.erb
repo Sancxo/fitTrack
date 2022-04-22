@@ -11,7 +11,7 @@
                 <%= link_to "Hi #{current_user.first_name}!", user_profile_path(current_user.id), class: "nav-link #{set_active_class('/users/edit')}" %>
             </li>
             <li class="nav-item">
-                <%= link_to 'Your activities', activities_path, class: "nav-link #{set_active_class('/activities')}" %>
+                <%= link_to 'Your activities', user_activities_path(current_user.id), class: "nav-link #{set_active_class('/activities')}" %>
             </li>
             <li class="nav-item py-2"> | </li>
             <li class="nav-item">

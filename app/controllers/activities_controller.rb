@@ -5,7 +5,11 @@ class ActivitiesController < ApplicationController
   
   # GET /activities/:id or /activities.json
   def index
-    @activities = Activity.where(user_id: params[:id])
+    @activities = Activity.all
+  end
+
+  def list_user_activities
+    @activities = Activity.where(user_id: params[:uid])
   end
 
   # GET /activities/1 or /activities/1.json
@@ -56,7 +60,7 @@ class ActivitiesController < ApplicationController
     @activity.destroy
 
     respond_to do |format|
-      format.html { redirect_to activities_url, notice: "Activity was successfully destroyed." }
+      format.html { redirect_to user_activities_path(current_user.id), notice: "Activity was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -69,7 +73,7 @@ class ActivitiesController < ApplicationController
 
     def correct_user
       @activity = current_user.activities.find_by(id: params[:id])
-      redirect_to activities_path, alert: "Not authorized to edit or delete this activity" if @activity.nil?
+      redirect_to user_activities_path(current_user.id), alert: "Not authorized to edit or delete this activity" if @activity.nil?
     end
 
     # Only allow a list of trusted parameters through.

@@ -6,7 +6,7 @@ class ActivitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get activities_url
+    get user_activities_url(current_user.id)
     assert_response :success
   end
 
@@ -43,6 +43,6 @@ class ActivitiesControllerTest < ActionDispatch::IntegrationTest
       delete activity_url(@activity)
     end
 
-    assert_redirected_to activities_url
+    assert_redirected_to user_activities_url(current_user.id)
   end
 end

@@ -13,7 +13,7 @@
     <p><%= get_user_age() unless @user.birthdate.nil? %> / <%= @user.gender unless @user.gender.nil? %></p>
     <p><%= @user.about %></p>
     <p>Member since: <%= @user.created_at.year %>/<%= format('%02i', @user.created_at.month) %>/<%= format('%02i', @user.created_at.day) %></p>
-    <p><%= link_to 'My activities', activities_path(@user.id), class: 'text-orange' %></p>
+    <p><%= link_to 'See my activities', user_activities_path(@user.id), class: 'text-orange' %></p>
     <% if user_signed_in? && @user.id == current_user.id %>
         <p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-orange" %></p>
     <% end %>

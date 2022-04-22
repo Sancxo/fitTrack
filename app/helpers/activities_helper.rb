@@ -4,6 +4,10 @@ module ActivitiesHelper
         user.first_name + " " + user.last_name
     end
 
+    def getUserFirstName(user_id)
+        User.find(user_id).first_name
+    end
+
     def activity_img(activity_name)
         case activity_name
         when "Running"

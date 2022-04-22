@@ -6,7 +6,7 @@ class ActivitiesTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit activities_url
+    visit user_activities_url(current_user.id)
     assert_selector "h1", text: "Activities"
   end
 

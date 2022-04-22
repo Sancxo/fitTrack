@@ -1,13 +1,12 @@
 <div class="text-center">
   <h1>Your activities</h1>
-
   <div id="activities" class="container p-3 d-flex flex-wrap justify-content-center">
     <% @activities.each do |activity| %>
         <%= render partial: "activity_card", locals: {activity: activity} %>
     <% end %>
   </div>
   
-  <% if params[:id].to_i == current_user.id %>
+  <% if params[:uid].to_i == current_user.id %>
     <%= link_to "New activity", new_activity_path, class: "btn btn-green" %>
   <% end %>
 </div>
