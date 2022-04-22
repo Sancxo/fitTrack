@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   root "site#home"
   get '/about' => "site#about"
 
-  resources :activities
+  get "/activities/:id" => 'activities#index', as: :activities
+  resources :activities, except: :index
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -3,9 +3,9 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
   
-  # GET /activities or /activities.json
+  # GET /activities/:id or /activities.json
   def index
-    @activities = Activity.all
+    @activities = Activity.where(user_id: params[:id])
   end
 
   # GET /activities/1 or /activities/1.json

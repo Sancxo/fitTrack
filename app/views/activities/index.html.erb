@@ -3,11 +3,11 @@
 
   <div id="activities" class="container p-3 d-flex flex-wrap justify-content-center">
     <% @activities.each do |activity| %>
-      <% if activity.user_id == current_user.id %>
         <%= render partial: "activity_card", locals: {activity: activity} %>
-      <% end %>
     <% end %>
   </div>
-
-  <%= link_to "New activity", new_activity_path, class: "btn btn-green" %>
+  
+  <% if params[:id].to_i == current_user.id %>
+    <%= link_to "New activity", new_activity_path, class: "btn btn-green" %>
+  <% end %>
 </div>
