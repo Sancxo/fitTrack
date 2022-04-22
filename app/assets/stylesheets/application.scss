@@ -34,6 +34,14 @@
     }  
 }
 
+// sizes
+.vh-50 {
+    height: 50vh;
+}
+.vh-25 {
+    height: 25vh;
+}
+
 // Texts
 .text-orange, .nav-link:hover {
     color: orangered !important;
@@ -73,35 +81,41 @@ a.text-orange:hover {
     height: 10rem;
 }
 .running {
-    background: center / cover no-repeat url("running.jpg");
+    background: center / cover no-repeat url("activities/running.jpg");
 }
 .cycling {
-    background: center / cover no-repeat url("cycling.jpg");
+    background: center / cover no-repeat url("activities/cycling.jpg");
 }
 .hiking {
-    background: center / cover no-repeat url("hiking.webp");
+    background: center / cover no-repeat url("activities/hiking.webp");
 }
 .lifting {
-    background: center / cover no-repeat url("lifting.jpg");
+    background: center / cover no-repeat url("activities/lifting.jpg");
 }
 .swimming {
-    background: center / cover no-repeat url("swimming.jpg");
+    background: center / cover no-repeat url("activities/swimming.jpg");
 }
 .skiing {
-    background: center / cover no-repeat url("");
+    background: center / cover no-repeat url("activities/skiing.jpeg");
 }
 .yoga {
-    background: center / cover no-repeat url("");
+    background: center / cover no-repeat url("activities/yoga.jpg");
 }
 .rowing {
-    background: center / cover no-repeat url("");
+    background: center / cover no-repeat url("activities/rowing.webp");
 }
-.skating {
-    background: center / cover no-repeat url("");
+.skateboarding {
+    background: center / cover no-repeat url("activities/skateboarding.jpeg");
 }
 .climbing {
-    background: center / cover no-repeat url("");
+    background: center / cover no-repeat url("activities/climbing.webp");
 }
 .tennis {
-    background: center / cover no-repeat url("");
+    background: center / cover no-repeat url("activities/tennis.webp");
+}
+.soccer {
+    background: center / cover no-repeat url("activities/soccer.jpg");  
+}
+.basket {
+    background: center / cover no-repeat url("activities/basket.webp");  
 }

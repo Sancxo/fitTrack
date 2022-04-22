@@ -16,18 +16,22 @@ module ActivitiesHelper
             'hiking'
         when "Skiing"
             'skiing'
-        when "Weight-lifting"
+        when "Weightlifting"
             'lifting'
         when "Yoga"
             'yoga'
         when "Rowing"
             'rowing'
-        when "Skating"
-            'skating'
+        when "Skateboarding"
+            'skateboarding'
         when "Climbing"
             'climbing'
         when 'Tennis'
             'tennis'
+        when 'Soccer'
+            'soccer'
+        when 'Basket'
+            'basket'
         else
             nil
         end 

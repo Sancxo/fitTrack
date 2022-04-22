@@ -1,9 +1,9 @@
-<div id="<%= dom_id activity %>" class="card m-2" style="width: 16rem; height: 22rem">
+<div id="<%= dom_id activity %>" class="card m-2" style="width: 16rem; height: 22rem" role="button">
   <div class="card-img <%= activity_img(activity.name) %>"></div>
   <div class="card-body">
     <h5 class="card-title"><%= activity.name %></h5>
-    <p class="card-text m-3"><%= activity.date %> at <%= activity.time.strftime('%H:%M:%S') %></p>
+    <p class="card-text m-3"><%= activity.date %> at <%= activity.time.strftime('%H:%M') %></p>
     <p class="card-text mb-2">Duration: <%= activity.duration.strftime('%H:%M:%S') %></p>
-    <%= link_to "Show this activity", activity, class: "btn btn-orange mt-2" %>
+    <%= link_to "Show this activity", activity, class: "btn btn-orange mt-2 stretched-link" %>
   </div>
 </div>
