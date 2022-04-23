@@ -7,18 +7,29 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-3 mb-2 mb-lg-0 justify-content-end flex-grow-1">
         <% if user_signed_in? %>
-            <li class="nav-item">
-                <%= link_to "Hi #{current_user.first_name}!", user_profile_path(current_user.id), class: "nav-link #{set_active_class('/users/edit')}" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to 'Your activities', user_activities_path(current_user.id), class: "nav-link #{set_active_class('/activities')}" %>
-            </li>
-            <li class="nav-item py-2"> | </li>
-            <li class="nav-item">
-                <%= link_to 'Add activity', new_activity_path, class: "nav-link #{set_active_class('/activities/new')}" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to 'Sign out', destroy_user_session_path, class: "nav-link", data: {"turbo-method": :delete} %>
+            <li class="nav-item dropdown">
+              <%= link_to "Hi #{current_user.first_name}!", '#', class: "nav-link dropdown-toggle #{set_active_class(["/user/#{current_user.id}", "/activities/user/#{current_user.id}", "/activities/new"])}", id: 'navbarDropdown', role: "button", data: {"bs-toggle": "dropdown"}, aria: {expanded: false} %>
+
+              <!-- <a class='nav-link dropdown-toggle <%= set_active_class(["/user/#{current_user.id}", "/activities/user/#{current_user.id}", "/activities/new"]) %>' href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hi <%# current_user.first_name %>!
+              </a> -->
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <%= link_to "Profile", user_profile_path(current_user.id), class: "dropdown-item #{set_active_class("/user/#{current_user.id}")}" %>
+                </li>
+                <li>
+                  <%= link_to 'Your activities', user_activities_path(current_user.id), class: "dropdown-item #{set_active_class("/activities/user/#{current_user.id}")}" %>
+                </li>                
+                <li>
+                  <%= link_to 'Add activity', new_activity_path, class: "dropdown-item #{set_active_class('/activities/new')}" %>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <%= link_to 'Sign out', destroy_user_session_path, class: "dropdown-item", data: {"turbo-method": :delete} %>
+                </li>
+              </ul>
             </li>
         <% else %>
             <li class="nav-item">
