@@ -1,6 +1,6 @@
 <div class="text-center">
   <h1>Your activities</h1>
-  <div id="activities" class="container p-3 d-flex flex-wrap justify-content-center">
+  <div id="activities" class="container p-3 mx-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
     <% @activities.each do |activity| %>
         <%= render partial: "activity_card", locals: {activity: activity} %>
     <% end %>
