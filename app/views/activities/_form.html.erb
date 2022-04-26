@@ -15,8 +15,8 @@
     <%= form.text_field :user_id, id: :activity_user_id, value: current_user.id, type: :hidden %>
   </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: "form-label" %>
     <%= form.select :name, [
       "Running", 
       "Swimming", 
@@ -31,25 +31,25 @@
       "Tennis",
       "Soccer",
       "Basket"
-    ] %>
+    ], {}, class: "form-select" %>
   </div>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+  <div class="mb-3">
+    <%= form.label :date, style: "display: block", class: "form-label" %>
+    <%= form.date_field :date, class: "form-control" %>
   </div>
 
-    <div>
-      <%= form.label :time, style: "display: block" %>
-      <%= form.time_field :time %>
+    <div class="mb-3">
+      <%= form.label :time, style: "display: block", class: "form-label" %>
+      <%= form.time_field :time, class: "form-control" %>
     </div>
 
-  <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.time_field :duration %>
+  <div class="mb-3">
+    <%= form.label :duration, style: "display: block", class: "form-label" %>
+    <%= form.time_field :duration, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="text-center mb-3">
+    <%= form.submit "Update", class: "btn btn-orange" %>
   </div>
 <% end %>

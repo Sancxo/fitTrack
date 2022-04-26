@@ -1,8 +1,9 @@
-<h1>New activity</h1>
-<%= render "form", activity: @activity %>
+<div class= "mx-auto w-50 mt-3">
+  <h1>New activity</h1>
 
-<br>
+  <%= render "form", activity: @activity %>
 
-<div>
-  <%= link_to "Back to your activities", user_activities_path(current_user.id) %>
+  <div class="text-center">
+    <%= link_to "Back to your activities", user_activities_path(current_user.id) %>
+  </div>
 </div>
