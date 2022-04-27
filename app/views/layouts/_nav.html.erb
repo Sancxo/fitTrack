@@ -15,19 +15,19 @@
               </a> -->
               <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
                 <li>
-                  <%= link_to "Profile", user_profile_path(current_user.id), class: "dropdown-item #{set_active_class("/user/#{current_user.id}")}" %>
+                  <%= link_to "Profile", user_profile_path(current_user.id), class: "dropdown-item text-green-dark #{set_active_class("/user/#{current_user.id}")}" %>
                 </li>
                 <li>
-                  <%= link_to 'Your activities', user_activities_path(current_user.id), class: "dropdown-item #{set_active_class("/activities/user/#{current_user.id}")}" %>
+                  <%= link_to 'Your activities', user_activities_path(current_user.id), class: "dropdown-item text-green-dark #{set_active_class("/activities/user/#{current_user.id}")}" %>
                 </li>                
                 <li>
-                  <%= link_to 'Add activity', new_activity_path, class: "dropdown-item #{set_active_class('/activities/new')}" %>
+                  <%= link_to 'Add activity', new_activity_path, class: "dropdown-item text-green-dark #{set_active_class('/activities/new')}" %>
                 </li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li>
-                  <%= link_to 'Sign out', destroy_user_session_path, class: "dropdown-item", data: {"turbo-method": :delete} %>
+                  <%= link_to 'Sign out', destroy_user_session_path, class: "dropdown-item text-orange", data: {"turbo-method": :delete} %>
                 </li>
               </ul>
             </li>

@@ -51,7 +51,7 @@
 .text-orange, .nav-link:hover {
     color: orangered !important;
 }
-.text-green-dark {
+.text-green-dark, a.dropdown-item.text-green-dark:hover {
     color: limegreen;
 }
 .text-green, a.text-green-dark:hover {
@@ -59,6 +59,15 @@
 }
 a.text-orange:hover {
     color: orange !important;
+}
+a.dropdown-item:hover {
+    background-color: greenyellow;
+}
+a.dropdown-item.active {
+    background-color: limegreen;
+}
+a.dropdown-item.active:hover {
+    color: white;
 }
 .text-border-dark {
     text-shadow: #000 1px 0, #000 0 1px, #000 -1px 0, #000 0 -1px;
