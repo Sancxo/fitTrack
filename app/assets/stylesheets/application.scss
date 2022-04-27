@@ -51,7 +51,10 @@
 .text-orange, .nav-link:hover {
     color: orangered !important;
 }
-.text-green {
+.text-green-dark {
+    color: limegreen;
+}
+.text-green, a.text-green-dark:hover {
     color: chartreuse;
 }
 a.text-orange:hover {
