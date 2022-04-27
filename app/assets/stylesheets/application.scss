@@ -42,6 +42,11 @@
     height: 25vh;
 }
 
+// z-indexes
+.z-1 {
+    z-index: 1;
+}
+
 // Texts
 .text-orange, .nav-link:hover {
     color: orangered !important;
