@@ -9,7 +9,11 @@ class ActivitiesController < ApplicationController
   end
 
   def list_user_activities
-    @activities = Activity.where(user_id: params[:uid])
+    @activities = 
+      Activity
+      .where(user_id: params[:uid])
+      .order("date DESC")
+      .order("time DESC")
   end
 
   # GET /activities/1 or /activities/1.json
