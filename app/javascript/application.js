@@ -9,7 +9,7 @@ import "bootstrap"
 document.addEventListener('turbo:load', () => {
     const footer = document.querySelector("footer");
 
-    if (footer.offsetTop + footer.offsetHeight <= window.innerHeight) {
+    if (footer.offsetTop + footer.offsetHeight < window.innerHeight) {
         footer.style.position = 'fixed';
         footer.style.bottom = 0;
         footer.style.width = "100vw";
