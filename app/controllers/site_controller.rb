@@ -4,4 +4,13 @@ class SiteController < ApplicationController
 
   def about
   end
+
+  def legal
+  end
+
+  def privacy
+  end
+
+  def contact
+  end
 end

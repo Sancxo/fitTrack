@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   }
   root "site#home"
   get '/about' => "site#about"
+  get '/privacy' => "site#privacy"
+  get '/contact' => "site#contact"
+  get "/legal" => "site#legal"
 
   get "/activities/user/:uid" => 'activities#list_user_activities', as: :user_activities
   resources :activities
