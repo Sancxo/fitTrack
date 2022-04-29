@@ -12,26 +12,17 @@
 
   <body>
     <header>
-      <%= render "layouts/nav"%>
+      <%= render "layouts/nav" %>
     </header>
 
     <main>
-      <% if notice %>
-        <div class="alert alert-success alert-dismissible fade show w-50 text-center position-fixed bottom-0 mb-0 start-50 translate-middle-x z-1" role="alert">
-          <p><%= notice %><p>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% elsif alert %>
-        <div class="alert alert-danger alert-dismissible fade show w-50 text-center position-fixed bottom-0 mb-0 start-50 translate-middle-x z-1" role="alert">
-          <p><%= alert %><p>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% end %>
+     <%= render "layouts/alerts" %>
 
       <%= yield %>
     </main>
-  </body>
 
-  <footer>
-  </footer>
+    <footer class="mt-5">
+      <%= render "layouts/footer" %>
+    </footer>
+  </body>
 </html>
