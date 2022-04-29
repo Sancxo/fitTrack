@@ -1,19 +1,21 @@
 <div class="text-center my-3">
-    <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar.variant(:profile) %>
-    <% else %>
-        <% if @user.gender == "Female" %>
-            <%= image_tag 'avatar_woman.png', width: "300px", class: "rounded-circle" %>
-        <% elsif @user.gender == "Male" %>
-            <%= image_tag 'avatar_man.png', width: "300px", class: "rounded-circle" %>
-        <% end %>
-    <% end%>
+    <div class="my-5">
+        <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar.variant(:profile), class: "rounded-circle" %>
+        <% else %>
+            <% if @user.gender == "Female" %>
+                <%= image_tag 'avatar_woman.png', width: "300px", class: "rounded-circle" %>
+            <% elsif @user.gender == "Male" %>
+                <%= image_tag 'avatar_man.png', width: "300px", class: "rounded-circle" %>
+            <% end %>
+        <% end%>
+    </div>
 
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p><%= get_user_age() unless @user.birthdate.nil? %> / <%= @user.gender unless @user.gender.nil? %></p>
     <p><%= @user.about %></p>
     <p>Member since: <%= @user.created_at.year %>/<%= format('%02i', @user.created_at.month) %>/<%= format('%02i', @user.created_at.day) %></p>
-    <p><%= link_to 'See my activities', user_activities_path(@user.id), class: 'text-orange' %></p>
+    <p><%= link_to 'See my activities', user_activities_path(@user.id), class: "text-green-dark" %></p>
     <% if user_signed_in? && @user.id == current_user.id %>
         <p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-orange" %></p>
     <% end %>

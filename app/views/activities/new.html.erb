@@ -1,9 +1,9 @@
-<div class= "mx-auto w-50 mt-3">
+<div class= "mx-auto w-50 my-3">
   <h1>New activity</h1>
 
   <%= render "form", activity: @activity %>
 
   <div class="text-center">
-    <%= link_to "Back to your activities", user_activities_path(current_user.id) %>
+    <%= link_to "Back to your activities", user_activities_path(current_user.id), class: "text-green-dark" %>
   </div>
 </div>

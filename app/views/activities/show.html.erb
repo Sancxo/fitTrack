@@ -1,11 +1,11 @@
-<div  id="activity" class="container w-50 text-center border border-orange rounded my-3 p-3 bg-light">
+<div id="activity" class="position-absolute top-45 start-50 translate-middle w-50 text-center border border-orange rounded p-3 bg-light">
   <%= render @activity %>
 
   <div>
     <% if @activity.user_id == current_user.id %>
-      <%= link_to "Edit this activity", edit_activity_path(@activity) %> | <%= link_to "Back to your activities", user_activities_path(@activity.user_id) %>
+      <%= link_to "Edit this activity", edit_activity_path(@activity), class: "text-green-dark" %> | <%= link_to "Back to your activities", user_activities_path(@activity.user_id), class: "text-green-dark" %>
     <% else %>
-      <%= link_to "Back to #{getUserFirstName(@activity.user_id)}'s activities", user_activities_path(@activity.user_id) %>
+      <%= link_to "Back to #{getUserFirstName(@activity.user_id)}'s activities", user_activities_path(@activity.user_id), class: "text-green-dark" %>
     <% end %>
     
 

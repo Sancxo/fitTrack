@@ -1,10 +1,10 @@
-<div class= "mx-auto w-50 mt-3">
+<div class= "mx-auto w-50 my-3">
   <h1>Editing activity</h1>
 
   <%= render "form", activity: @activity %>
 
   <div class="d-lg-block d-flex flex-column text-center">
-    <%= link_to "Show this activity", @activity %> <span class="d-none d-lg-inline">|</span>
-    <%= link_to "Back to activities", user_activities_path(current_user.id) %>
+    <%= link_to "Show this activity", @activity, class: "text-green-dark" %> <span class="d-none d-lg-inline">|</span>
+    <%= link_to "Back to activities", user_activities_path(current_user.id), class: "text-green-dark" %>
   </div>
 </div>
