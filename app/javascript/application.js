@@ -6,6 +6,7 @@ import "bootstrap"
 //= require popper
 //= require bootstrap
 
+// Event listener to dinamically put the footer on bottom page
 document.addEventListener('turbo:load', () => {
     const footer = document.querySelector("footer");
 
